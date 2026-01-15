@@ -2,9 +2,9 @@
 
 namespace CleaniqueCoders\Dokufy\Tests;
 
+use CleaniqueCoders\Dokufy\DokufyServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use CleaniqueCoders\Dokufy\DokufyServiceProvider;
 
 class TestCase extends Orchestra
 {

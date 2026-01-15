@@ -2,9 +2,9 @@
 
 namespace CleaniqueCoders\Dokufy;
 
+use CleaniqueCoders\Dokufy\Commands\DokufyCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use CleaniqueCoders\Dokufy\Commands\DokufyCommand;
 
 class DokufyServiceProvider extends PackageServiceProvider
 {
