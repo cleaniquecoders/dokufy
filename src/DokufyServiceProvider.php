@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace CleaniqueCoders\Dokufy;
 
-use CleaniqueCoders\Dokufy\Commands\DokufyCommand;
+use CleaniqueCoders\Dokufy\Commands\GenerateCommand;
+use CleaniqueCoders\Dokufy\Commands\InstallCommand;
+use CleaniqueCoders\Dokufy\Commands\StatusCommand;
 use CleaniqueCoders\Dokufy\Drivers\ChromiumDriver;
 use CleaniqueCoders\Dokufy\Drivers\FakeDriver;
 use CleaniqueCoders\Dokufy\Drivers\GotenbergDriver;
@@ -21,7 +23,11 @@ class DokufyServiceProvider extends PackageServiceProvider
             ->name('dokufy')
             ->hasConfigFile()
             ->hasViews()
-            ->hasCommand(DokufyCommand::class);
+            ->hasCommands([
+                StatusCommand::class,
+                GenerateCommand::class,
+                InstallCommand::class,
+            ]);
     }
 
     public function packageRegistered(): void
