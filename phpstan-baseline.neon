@@ -1,0 +1,26 @@
+parameters:
+    ignoreErrors:
+        # Gotenberg is an optional dependency
+        -
+            message: '#Gotenberg#'
+            path: src/Drivers/GotenbergDriver.php
+
+        # Browsershot is an optional dependency
+        -
+            message: '#Browsershot#'
+            path: src/Drivers/ChromiumDriver.php
+
+        # PHPWord is an optional dependency
+        -
+            message: '#PhpWord#'
+            path: src/Drivers/PhpWordDriver.php
+
+        # Larastan false positives for config directory
+        -
+            message: "#Called 'env' outside of the config directory#"
+            path: config/dokufy.php
+
+        # Octane compatibility - singleton alias is fine for this use case
+        -
+            message: '#Consider using bind method instead#'
+            path: src/DokufyServiceProvider.php
