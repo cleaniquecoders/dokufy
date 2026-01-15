@@ -5,7 +5,8 @@
       "Bash(composer analyse:*)",
       "Bash(composer test:*)",
       "Bash(composer check:*)",
-      "Bash(markdownlint:*)"
+      "Bash(markdownlint:*)",
+      "Bash(./vendor/bin/pest:*)"
     ]
   }
 }
