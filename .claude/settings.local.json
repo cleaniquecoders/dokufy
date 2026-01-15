@@ -4,7 +4,8 @@
       "Bash(composer lint:*)",
       "Bash(composer analyse:*)",
       "Bash(composer test:*)",
-      "Bash(composer check:*)"
+      "Bash(composer check:*)",
+      "Bash(markdownlint:*)"
     ]
   }
 }
