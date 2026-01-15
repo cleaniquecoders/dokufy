@@ -22,8 +22,26 @@ Generate your first PDF in under 5 minutes.
 
 Core concepts: templates, HTML content, data binding, and output methods.
 
+## Interactive Setup
+
+For a guided installation experience, use the install command:
+
+```bash
+php artisan dokufy:install
+```
+
+This interactive wizard will:
+
+- Publish the configuration file
+- Create the templates directory
+- Check available drivers
+- Offer to install missing driver packages
+
+See [CLI Commands](../08-cli-commands/03-install.md) for more details.
+
 ## Related Documentation
 
-- [Architecture Overview](../02-architecture/README.md) - Understand how Dokufy works
+- [Architecture Overview](../02-architecture/README.md) - How Dokufy works
 - [Drivers](../03-drivers/README.md) - Choose the right driver for your needs
 - [Configuration](../05-configuration/README.md) - Configure your preferred driver
+- [CLI Commands](../08-cli-commands/README.md) - Artisan commands reference

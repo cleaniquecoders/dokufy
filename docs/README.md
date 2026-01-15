@@ -25,7 +25,8 @@ System design, driver pattern, and how Dokufy works under the hood.
 
 ### [03. Drivers](03-drivers/README.md)
 
-Detailed documentation for each driver: Gotenberg, LibreOffice, Chromium, PHPWord, and Fake.
+Detailed documentation for each driver: Gotenberg, LibreOffice, Chromium,
+PHPWord, and Fake.
 
 ### [04. API Reference](04-api/README.md)
 
@@ -42,6 +43,10 @@ Real-world examples and common use cases.
 ### [07. Testing](07-testing/README.md)
 
 Testing strategies using the FakeDriver and assertion methods.
+
+### [08. CLI Commands](08-cli-commands/README.md)
+
+Artisan commands for status checks, document generation, and installation.
 
 ## Quick Start
 
@@ -69,3 +74,4 @@ Dokufy::html('<h1>Hello World</h1>')
 - **Configuration options**: Check [Configuration](05-configuration/README.md)
 - **Code examples**: Check [Examples](06-examples/README.md)
 - **Testing your code**: Check [Testing](07-testing/README.md)
+- **CLI commands**: Check [CLI Commands](08-cli-commands/README.md)

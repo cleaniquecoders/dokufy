@@ -6,7 +6,8 @@
       "Bash(composer test:*)",
       "Bash(composer check:*)",
       "Bash(markdownlint:*)",
-      "Bash(./vendor/bin/pest:*)"
+      "Bash(./vendor/bin/pest:*)",
+      "Bash(npx markdownlint-cli:*)"
     ]
   }
 }
