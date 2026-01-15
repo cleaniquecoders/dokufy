@@ -7,7 +7,8 @@
       "Bash(composer check:*)",
       "Bash(markdownlint:*)",
       "Bash(./vendor/bin/pest:*)",
-      "Bash(npx markdownlint-cli:*)"
+      "Bash(npx markdownlint-cli:*)",
+      "Bash(./vendor/bin/phpstan analyse:*)"
     ]
   }
 }

@@ -33,8 +33,16 @@ class GenerateCommand extends Command
 
     public function handle(Dokufy $dokufy): int
     {
-        $input = $this->argument('input') ?? $this->promptForInput();
-        $output = $this->argument('output') ?? $this->promptForOutput($input);
+        /** @var string|null $inputArg */
+        $inputArg = $this->argument('input');
+        $input = $inputArg ?? $this->promptForInput();
+
+        $output = $this->promptForOutput($input);
+        /** @var string|null $outputArg */
+        $outputArg = $this->argument('output');
+        if ($outputArg !== null) {
+            $output = $outputArg;
+        }
 
         // Validate input file
         if (! File::exists($input)) {
@@ -56,17 +64,18 @@ class GenerateCommand extends Command
         $data = $this->getPlaceholderData();
 
         // Get driver
+        /** @var string|null $driverName */
         $driverName = $this->option('driver');
 
         try {
-            if ($driverName) {
+            if ($driverName !== null) {
                 $dokufy->driver($driverName);
             }
 
             $this->components->info('Generating document...');
 
-            $extension = strtolower(pathinfo($input, PATHINFO_EXTENSION));
-            $outputExtension = strtolower(pathinfo($output, PATHINFO_EXTENSION));
+            $extension = strtolower((string) pathinfo($input, PATHINFO_EXTENSION));
+            $outputExtension = strtolower((string) pathinfo($output, PATHINFO_EXTENSION));
 
             // Set template or HTML content based on input type
             if ($extension === 'html' || $extension === 'htm') {
@@ -157,8 +166,9 @@ class GenerateCommand extends Command
     protected function getPlaceholderData(): array
     {
         // Try data option first
+        /** @var string|null $jsonData */
         $jsonData = $this->option('data');
-        if ($jsonData) {
+        if ($jsonData !== null && $jsonData !== '') {
             $decoded = json_decode($jsonData, true);
             if (json_last_error() !== JSON_ERROR_NONE) {
                 $this->components->warn('Invalid JSON in --data option. Ignoring.');
@@ -166,12 +176,13 @@ class GenerateCommand extends Command
                 return [];
             }
 
-            return $decoded;
+            return is_array($decoded) ? $decoded : [];
         }
 
         // Try data-file option
+        /** @var string|null $dataFile */
         $dataFile = $this->option('data-file');
-        if ($dataFile) {
+        if ($dataFile !== null && $dataFile !== '') {
             if (! File::exists($dataFile)) {
                 $this->components->warn("Data file not found: {$dataFile}. Ignoring.");
 
@@ -186,7 +197,7 @@ class GenerateCommand extends Command
                 return [];
             }
 
-            return $decoded;
+            return is_array($decoded) ? $decoded : [];
         }
 
         return [];
