@@ -1,6 +1,6 @@
 {
     "name": "cleaniquecoders/dokufy",
-    "description": "Generate PDFs your way — Gotenberg, LibreOffice, or native PHP.",
+    "description": "Generate PDFs your way \u2014 Gotenberg, LibreOffice, or native PHP.",
     "keywords": [
         "Cleanique Coders",
         "laravel",
@@ -22,16 +22,16 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/contracts": "^10.0||^11.0||^12.0",
-        "illuminate/http": "^10.0||^11.0||^12.0",
-        "illuminate/support": "^10.0||^11.0||^12.0",
+        "illuminate/contracts": "^10.0||^11.0||^12.0||^13.0",
+        "illuminate/http": "^10.0||^11.0||^12.0||^13.0",
+        "illuminate/support": "^10.0||^11.0||^12.0||^13.0",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
         "larastan/larastan": "^2.9||^3.0",
         "nunomaduro/collision": "^7.10||^8.1",
-        "orchestra/testbench": "^8.0||^9.0||^10.0",
+        "orchestra/testbench": "^8.0||^9.0||^10.0||^11.0",
         "pestphp/pest": "^2.0||^3.0||^4.0",
         "pestphp/pest-plugin-arch": "^2.0||^3.0||^4.0",
         "pestphp/pest-plugin-laravel": "^2.0||^3.0||^4.0",
