@@ -2,6 +2,24 @@
 
 All notable changes to `dokufy` will be documented in this file.
 
+## 1.1.0 - 2026-03-31
+
+### What's Changed
+
+#### Added
+
+- Laravel 13 support (illuminate constraints include `^13.0`)
+- PHPUnit 12 compatibility
+- Pest 4 support
+
+#### Changed
+
+- Updated `phpunit.xml.dist` for PHPUnit 12
+- Standardized CI workflow (Laravel 12 + PHP 8.4/8.3)
+- Updated dev dependencies (larastan, phpstan plugins, collision)
+
+**Full Changelog**: https://github.com/cleaniquecoders/dokufy/compare/1.0.0...1.1.0
+
 ## First Release - 2026-01-15
 
 ### Overview
@@ -23,6 +41,7 @@ use CleaniqueCoders\Dokufy\Facades\Dokufy;
 Dokufy::template(resource_path('templates/invoice.docx'))
     ->data(['name' => 'John Doe', 'amount' => 'RM 1,500.00'])
     ->toPdf(storage_path('documents/invoice.pdf'));
+
 
 ```
 #### Multiple Output Formats
@@ -61,6 +80,7 @@ Dokufy::template($templatePath)
     ->with($handler)
     ->toPdf($outputPath);
 
+
 ```
 #### Artisan Commands
 
@@ -80,6 +100,7 @@ Dokufy::fake();
 Dokufy::assertPdfGenerated();
 Dokufy::assertGenerated(storage_path('documents/invoice.pdf'));
 
+
 ```
 
 ---
@@ -89,17 +110,20 @@ Dokufy::assertGenerated(storage_path('documents/invoice.pdf'));
 ```bash
 composer require cleaniquecoders/dokufy
 
+
 ```
 Publish configuration:
 
 ```bash
 php artisan vendor:publish --tag="dokufy-config"
 
+
 ```
 Or use the interactive installer:
 
 ```bash
 php artisan dokufy:install
+
 
 ```
 
@@ -145,6 +169,7 @@ return [
     ],
 ];
 
+
 ```
 
 ---
@@ -177,6 +202,7 @@ Dokufy::html(string $content): self       // Set HTML content
 Dokufy::data(array $data): self           // Set placeholder data
 Dokufy::with(object $handler): self       // Set Placeholdify handler
 
+
 ```
 #### Output Methods
 
@@ -185,6 +211,7 @@ Dokufy::toPdf(string $outputPath): string           // Generate PDF
 Dokufy::toDocx(string $outputPath): string          // Generate DOCX
 Dokufy::stream(?string $filename): StreamedResponse // Stream to browser
 Dokufy::download(?string $filename): BinaryFileResponse // Download
+
 
 ```
 #### Driver Management
@@ -195,6 +222,7 @@ Dokufy::make(?string $driver): self       // Create new instance
 Dokufy::getAvailableDrivers(): array      // List available drivers
 Dokufy::isDriverAvailable(string $driver): bool
 
+
 ```
 #### Testing
 
@@ -203,6 +231,7 @@ Dokufy::fake(): FakeDriver
 Dokufy::assertGenerated(string $path): void
 Dokufy::assertPdfGenerated(): void
 Dokufy::assertDocxGenerated(): void
+
 
 ```
 
